@@ -18,8 +18,11 @@ public class TestOfForm {
 
 
     @BeforeAll
-    static void setUpDriver() {
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+//    static void setUpDriver() {
+//        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+//    }
+    static void setUpDriver(){
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
