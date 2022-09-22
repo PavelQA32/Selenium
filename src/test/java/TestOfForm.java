@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.util.List;
 
@@ -14,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestOfForm {
     private WebDriver driver;
 
+
     @BeforeAll
     static void setUpDriver() {
         System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
@@ -21,7 +24,11 @@ public class TestOfForm {
 
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
     }
 
     @AfterEach
