@@ -22,7 +22,7 @@ public class TestOfForm {
 //        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
 //    }
     static void setUpDriver(){
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().create();
     }
 
     @BeforeEach
