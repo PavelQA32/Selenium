@@ -23,6 +23,7 @@ public class TestOfForm {
 //    }
     static void setUpDriver(){
         WebDriverManager.chromedriver().create();
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
